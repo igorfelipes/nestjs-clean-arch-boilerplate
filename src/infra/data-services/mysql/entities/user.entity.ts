@@ -10,7 +10,9 @@ export class User {
   @Column()
   name: string
 
-  @Column()
+  @Column({
+    unique: true
+  })
   email: string
 
   @Column()
@@ -19,6 +21,16 @@ export class User {
   @Column()
   password: string
 
+  @Column({
+    default: () => 'CURRENT_TIMESTAMP'
+  })
+  createdAt: Date
+
+  @Column({
+    default: () => 'CURRENT_TIMESTAMP',
+    onUpdate: 'CURRENT_TIMESTAMP'
+  })
+  updatedAt: Date
   // Relationships
 
   // @OneToMany(() => Purchase, purchase => purchase.customer)

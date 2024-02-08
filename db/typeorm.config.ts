@@ -9,7 +9,7 @@ const config = {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
-  entities: [__dirname + '/../src/infra/data-services/mysql/entites/*.entity{.ts,.js}'],
+  entities: [__dirname + '/../src/infra/data-services/mysql/**/*.entity{.ts,.js}'],
   migrations: [__dirname + '/migrations/**/*{.ts,.js}']
 }
 
